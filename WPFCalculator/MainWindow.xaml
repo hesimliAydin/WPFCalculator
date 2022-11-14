@@ -1,0 +1,345 @@
+﻿<Window x:Class="WPFCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCalculator"
+        mc:Ignorable="d"
+        Title="Calc" Height="450" Width="320">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="9">
+            <StackPanel Orientation="Horizontal">
+                
+            <Button Height="50"
+                    Width="80"
+                    Content="+/-"
+                    FontSize="20"
+                    Background="White"
+                    Name="btnNegative" Click="btnNegativeClick">
+            </Button>
+                <Button Height="50"
+                    Width="80"
+                    Content="0"
+                    FontSize="20"
+                    Background="White"
+                    Click="ButtonClick">
+                </Button>
+
+                <Button Height="50"
+                    Width="80"
+                    Content="."
+                    FontSize="30"
+                    Name="btnDot"    
+                    Background="White"
+                    Click="btnOperationClick">
+                </Button>
+                <Button Height="50"
+                    Width="80"
+                    Content="="
+                    FontSize="20"
+                    Name="Result"    
+                    Background="White"
+                    Click="btnCommanClick">
+                </Button>
+
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="7">
+            <StackPanel Orientation="Horizontal">
+                <Button Click="ButtonClick"
+                        Height="50"
+                        Width="80"
+                        Content="1"
+                        FontSize="20"
+                        Background="White">
+                </Button>
+
+                <Button Click="ButtonClick"
+                        Height="50"
+                        Width="80"
+                        Content="2"
+                        FontSize="20"
+                        Background="White">
+                </Button>
+
+                <Button Click="ButtonClick"
+                        Height="50"
+                        Width="80"
+                        Content="3"
+                        FontSize="20"
+                        Background="White">
+                </Button>
+
+                <Button Click="ButtonClick"
+                        Name="btnOperation"
+                        Height="50"
+                        Width="80"
+                        Content="+"
+                        FontSize="20"
+                        Background="LightGray">
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="6">
+            <StackPanel Orientation="Horizontal">
+                <Button Height="50"
+                        Width="80"
+                        Content="4"
+                        FontSize="20"
+                        Background="White"
+                        Click="ButtonClick">
+                </Button>
+
+                <Button Height="50"
+                        Width="80"
+                        Content="5"
+                        FontSize="20"
+                        Background="White"
+                        Click="ButtonClick">
+                </Button>
+
+                <Button Height="50"
+                        Width="80"
+                        Content="6"
+                        FontSize="20"
+                        Background="White"
+                        Click="ButtonClick">
+                </Button>
+
+                <Button Height="50"
+                        Width="80"
+                        Content="-"
+                        FontSize="20"
+                        Name="btnMinus"
+                        Background="LightGray"
+                        Click="ButtonClick">
+                </Button>
+
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="5">
+            <StackPanel Orientation="Horizontal">
+                <Button Height="50"
+                        Width="80"
+                        Content="7"
+                        FontSize="20"
+                        Background="White"
+                        Click="ButtonClick">
+                </Button>
+
+                <Button Height="50"
+                        Width="80"
+                        Content="8"
+                        FontSize="20"
+                        Background="White"
+                        Click="ButtonClick">
+                </Button>
+
+                <Button Height="50"
+                        Width="80"
+                        Content="9"
+                        FontSize="20"
+                        Background="White"
+                        Click="ButtonClick">
+                </Button>
+
+                <Button Height="50"
+                        Width="80"
+                        Content="x"
+                        FontSize="20"
+                        Name="btnMulti"
+                        Background="LightGray"
+                        Click="ButtonClick">
+                </Button>
+            </StackPanel>
+            
+        </Grid>
+        <Grid Grid.Row="4">
+            <StackPanel Orientation="Horizontal">
+                <Button 
+                    Height="50"
+                    Name="btnFraction"
+                    Width="80"
+                    Content="¹/x"
+                    FontSize="20"
+                    Click="btnOperationClick">
+                </Button>
+                
+                <Button 
+                    Height="50"
+                    Name="btnDoubleMulti"
+                    Width="80"
+                    Content="x²"
+                    FontSize="20"
+                    Click="btnOperationClick">
+                </Button>
+
+                <Button 
+                    Height="50"
+                    Name="btnSqrt"
+                    Width="80"
+                    Content="√х"
+                    FontSize="20"
+                    Click="btnOperationClick">
+                </Button>
+
+                <Button 
+                    Height="50"
+                    Name="btnDivide"
+                    Width="80"
+                    Content="÷"
+                    FontSize="20"
+                    Click="ButtonClick">
+                </Button>
+
+
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <StackPanel Orientation="Horizontal">
+                <Button
+                    Height="50"
+                    Width="80"
+                    Content="%"
+                    Name="btnPercent"
+                    FontSize="20"
+                    Click="btnOperationClick">
+                </Button>
+
+                <Button
+                    Height="50"
+                    Width="80"
+                    Content="CE"
+                    Name="btnRemoveAll"
+                    FontSize="20"
+                    Click="btnRemoveAllClick">
+                </Button>
+
+                <Button
+                    Height="50"
+                    Width="80"
+                    Content="C"
+                    Name="btnRemoveAll2"
+                    FontSize="20"
+                    Click="btnRemoveAllClick">
+                </Button>
+
+                <Button
+                    Height="50"
+                    Width="80"                 
+                    FontSize="20"
+                    Content="⌫"
+                    Name="btnDeleteone"
+                    Click="btnDeleteoneClick"                    >
+                </Button>
+
+
+            </StackPanel>
+            
+        </Grid>
+        <Canvas Grid.Row="2">
+            <Button 
+                Height="30"
+                Width="30"
+                Content="MC"
+                Canvas.Top="15"
+                Canvas.Left="10"
+                BorderThickness="0">
+            </Button>
+
+            <Button 
+                Height="30"
+                Width="30"
+                Content="MR"
+                Canvas.Bottom="2"
+                Canvas.Top="15"
+                Canvas.Left="65"
+                BorderThickness="0">
+            </Button>
+
+            <Button 
+                Height="30"
+                Width="30"
+                Content="M+"
+                Canvas.Bottom="2"
+                Canvas.Top="15"
+                Canvas.Left="120"
+                BorderThickness="0">
+            </Button>
+
+            <Button 
+                Height="30"
+                Width="30"
+                Content="M-"
+                Canvas.Bottom="2"
+                Canvas.Top="15"
+                Canvas.Left="175"
+                BorderThickness="0">
+            </Button>
+
+            <Button 
+                Height="30"
+                Width="30"
+                Content="MS"
+                Canvas.Bottom="2"
+                Canvas.Top="15"
+                Canvas.Left="230"
+                BorderThickness="0">
+            </Button>
+
+        </Canvas>
+
+        <Canvas Grid.Row="0">
+            <Image Height="22" Width="35" Source="/icons8-line-width-50.png" Canvas.Bottom="20" Canvas.Left="10" ></Image>
+            <Label 
+                Height="40"
+                Width="100"
+                Content="Standart"
+                FontWeight="Bold"
+                FontSize="20"
+                Canvas.Left="45">
+                
+            </Label>
+
+            <Image
+                Height="30"
+                Width="25"
+                Source="/icons8-delivery-time-30.png"
+                Canvas.Bottom="18"
+                Canvas.Right="10">
+            </Image>
+        </Canvas>
+
+        <Grid Grid.Row="1" Grid.RowSpan="1">
+            <TextBox
+                Height="90"
+                BorderThickness="0"
+                IsReadOnly="True" 
+                Name="txtBResult"
+                Visibility="Visible"
+                TextAlignment="Right" 
+                Background="LightGray"
+                FontSize="24">
+                
+            </TextBox>
+            
+        </Grid>
+
+    </Grid>
+</Window>
