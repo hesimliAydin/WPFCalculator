@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WPFCalculator
 {
@@ -25,8 +26,8 @@ namespace WPFCalculator
     public partial class MainWindow : Window
     {
 
-        
-        byte countCommand , countNegative = 0;
+        private double _result;
+        byte countCommand, countNegative = 0;
 
 
 
@@ -61,7 +62,7 @@ namespace WPFCalculator
             txtBResult.Text = txtBResult.Text + button.Content;
         }
 
-        
+
 
         private void btnCommanClick(object sender, RoutedEventArgs e)
         {
@@ -73,6 +74,35 @@ namespace WPFCalculator
         private void btnRemoveAllClick(object sender, RoutedEventArgs e)
         {
             txtBResult.Text = "0";
+        }
+
+        private void btnOperationClick(object sender, RoutedEventArgs e)
+        {
+            
+
+            if (sender is Button btn)
+            {
+
+                if (_result == 0)
+                {
+                    if (!double.TryParse(txtBResult.Text, out _result))
+                        return;
+                }
+
+
+
+                _result = btn.Content.ToString() switch
+                {
+                    "%" => _result / 100,
+                    "1/x" => 1 / _result,
+                    "x²" => Math.Pow(_result, 2),
+                    "√x" => Math.Sqrt(_result),
+                    _ => _result
+                };
+
+
+                txtBResult.Text = _result.ToString();
+            }
         }
 
         private void btnDeleteoneClick(object sender, RoutedEventArgs e)
